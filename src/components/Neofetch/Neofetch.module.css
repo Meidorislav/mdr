@@ -1,0 +1,44 @@
+.neofetchContainer {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .neofetchContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.asciiArt {
+  font-size: 0.6rem;
+  line-height: 1;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  white-space: pre;
+}
+
+@media (max-width: 600px) {
+  .asciiArt {
+    font-size: 3vw;
+  }
+}
+
+.infoLabel {
+  color: var(--accent-color);
+}
+
+.infoValue {
+  color: var(--text-color);
+}
+
+.infoTitle {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.divider {
+  border-bottom: 1px solid #555;
+  margin-bottom: 5px;
+}

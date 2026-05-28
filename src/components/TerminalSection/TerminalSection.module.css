@@ -1,0 +1,67 @@
+.commandLine {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.prompt {
+  color: var(--user-color);
+  font-weight: bold;
+}
+
+.at {
+  color: var(--text-color);
+}
+
+.host {
+  color: var(--prompt-color);
+}
+
+.colon {
+  color: var(--text-color);
+}
+
+.path {
+  color: var(--path-color);
+}
+
+.dollar {
+  color: var(--text-color);
+  margin-right: 10px;
+}
+
+.command {
+  color: var(--keyword-color);
+}
+
+.output {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2rem;
+  background-color: var(--text-color);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}

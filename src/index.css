@@ -1,1 +1,46 @@
-@import "tailwindcss";
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #d1d1d1;
+  --header-color: #1a1a1a;
+  --accent-color: #55ff55;
+  --prompt-color: #50fa7b;
+  --path-color: #8be9fd;
+  --date-color: #6272a4;
+  --keyword-color: #ff79c6;
+  --string-color: #f1fa8c;
+  --error-color: #ff5555;
+  --user-color: #bd93f9;
+  --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+#root {
+  height: 100%;
+}

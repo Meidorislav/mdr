@@ -1,0 +1,13 @@
+.asciiArt {
+  font-size: 0.6rem;
+  line-height: 1;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  white-space: pre;
+}
+
+@media (max-width: 600px) {
+  .asciiArt {
+    font-size: 1.8vw;
+  }
+}

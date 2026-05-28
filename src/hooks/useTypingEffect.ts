@@ -1,39 +1,49 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export const useTypingEffect = (text: string, speed: number = 30, startTrigger: boolean = true) => {
+export const useTypingEffect = (
+  text: string,
+  speed = 30,
+  startTrigger = true
+) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isFinished, setIsFinished] = useState(false);
-  const timerRef = useRef<number | null>(null);
+
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // Reset state when trigger becomes false
     if (!startTrigger) {
       setDisplayedText('');
       setIsFinished(false);
-      if (timerRef.current) window.clearInterval(timerRef.current);
+
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
       return;
     }
-    
-    // If already finished for this text, don't restart
-    if (isFinished && displayedText === text) return;
 
     let i = 0;
+
     setDisplayedText('');
     setIsFinished(false);
 
-    if (timerRef.current) window.clearInterval(timerRef.current);
-
-    timerRef.current = window.setInterval(() => {
-      setDisplayedText(text.substring(0, i + 1));
+    const type = () => {
+      setDisplayedText(text.slice(0, i + 1));
       i++;
-      if (i >= text.length) {
-        if (timerRef.current) window.clearInterval(timerRef.current);
+
+      if (i < text.length) {
+        timeoutRef.current = setTimeout(type, speed);
+      } else {
         setIsFinished(true);
       }
-    }, speed);
+    };
+
+    timeoutRef.current = setTimeout(type, speed);
 
     return () => {
-      if (timerRef.current) window.clearInterval(timerRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [text, speed, startTrigger]);
 

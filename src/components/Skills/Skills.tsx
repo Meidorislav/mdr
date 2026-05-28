@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Skills.module.css';
 
 interface Category {
@@ -12,12 +12,24 @@ const categories: Category[] = [
     skills: ['Go', 'Python', 'C++', 'TypeScript', 'SQL']
   },
   {
-    title: 'WEB / FRONTEND',
-    skills: ['React.js', 'Vanilla CSS', 'Vite', 'HTML5']
+    title: 'WEB',
+    skills: ['React', 'Vanilla CSS', 'Vite']
+  },
+  {
+    title: 'DESKTOP / GUI',
+    skills: ['Qt6 + QML']
   },
   {
     title: 'INFRA / OPS',
-    skills: ['Linux', 'Docker', 'Git / GitHub', 'PostgreSQL']
+    skills: ['Linux', 'Docker', 'Caddy', 'Git']
+  },
+  {
+    title: 'DATABASES',
+    skills: ['PostgreSQL', 'Relational Design']
+  },
+  {
+    title: 'SPECIAL / DOCS',
+    skills: ['Types', 'Markdown', 'LaTeX']
   },
   {
     title: 'LANGUAGES (BIO)',
@@ -25,7 +37,7 @@ const categories: Category[] = [
   }
 ];
 
-const Skills: React.FC = () => {
+const Skills = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const nextCategory = () => setActiveIdx((prev) => (prev + 1) % categories.length);

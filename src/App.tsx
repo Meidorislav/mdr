@@ -3,12 +3,14 @@ import TerminalWindow from './components/TerminalWindow/TerminalWindow';
 import TerminalSection from './components/TerminalSection/TerminalSection';
 import Neofetch from './components/Neofetch/Neofetch';
 import Welcome from './components/Welcome/Welcome';
-import About from './components/About/About';
+import Experience from './components/About/Experience';
+import Bio from './components/About/Bio';
+import Education from './components/About/Education';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 
-const App: React.FC = () => {
+const App = () => {
   const user = "meidorislav";
   const host = "portfolio";
 
@@ -37,13 +39,6 @@ const App: React.FC = () => {
       <div style={sectionWrapperStyle}>
         <TerminalWindow title={`${user}@${host}: ~`}>
           <Welcome />
-          <TerminalSection isPromptOnly path="~" user={user} host={host} />
-        </TerminalWindow>
-      </div>
-
-      {/* Neofetch Window */}
-      <div style={sectionWrapperStyle}>
-        <TerminalWindow title={`${user}@${host}: ~`}>
           <TerminalSection command="neofetch" path="~" user={user} host={host}>
             <Neofetch />
           </TerminalSection>
@@ -51,23 +46,23 @@ const App: React.FC = () => {
         </TerminalWindow>
       </div>
 
-      {/* About Me / Experience Window */}
+      {/* Bio Window */}
       <div style={sectionWrapperStyle}>
-        <TerminalWindow title={`${user}@${host}: ~/about`}>
-          <TerminalSection command="bat experience.md" path="~/about" user={user} host={host}>
-            <About />
+        <TerminalWindow title={`${user}@${host}: ~/bio`}>
+          <TerminalSection command="cat bio.txt" path="~/bio" user={user} host={host}>
+            <Bio />
           </TerminalSection>
-          <TerminalSection isPromptOnly path="~/about" user={user} host={host} />
+          <TerminalSection isPromptOnly path="~/bio" user={user} host={host} />
         </TerminalWindow>
       </div>
 
-      {/* Skills Tree Window */}
+      {/* Experience Window */}
       <div style={sectionWrapperStyle}>
-        <TerminalWindow title={`${user}@${host}: ~/skills`}>
-          <TerminalSection command="ls -F skills/" path="~/skills" user={user} host={host}>
-            <Skills />
+        <TerminalWindow title={`${user}@${host}: ~/experience`}>
+          <TerminalSection command="bat experience.md" path="~/experience" user={user} host={host}>
+            <Experience />
           </TerminalSection>
-          <TerminalSection isPromptOnly path="~/skills" user={user} host={host} />
+          <TerminalSection isPromptOnly path="~/experience" user={user} host={host} />
         </TerminalWindow>
       </div>
 
@@ -78,6 +73,26 @@ const App: React.FC = () => {
             <Projects />
           </TerminalSection>
           <TerminalSection isPromptOnly path="~/projects" user={user} host={host} />
+        </TerminalWindow>
+      </div>
+
+      {/* Education Window */}
+      <div style={sectionWrapperStyle}>
+        <TerminalWindow title={`${user}@${host}: ~/education`}>
+          <TerminalSection command="cat education.txt" path="~/education" user={user} host={host}>
+            <Education />
+          </TerminalSection>
+          <TerminalSection isPromptOnly path="~/education" user={user} host={host} />
+        </TerminalWindow>
+      </div>
+
+      {/* Contact Window */}
+      <div style={sectionWrapperStyle}>
+        <TerminalWindow title={`${user}@${host}: ~/skills`}>
+          <TerminalSection command="ls -F skills/" path="~/skills" user={user} host={host}>
+            <Skills />
+          </TerminalSection>
+          <TerminalSection isPromptOnly path="~/skills" user={user} host={host} />
         </TerminalWindow>
       </div>
 

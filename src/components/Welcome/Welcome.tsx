@@ -1,7 +1,6 @@
-import React from 'react';
 import styles from './Welcome.module.css';
 
-const Welcome: React.FC = () => {
+const Welcome = () => {
   return (
     <section className="output">
       <div className={styles.asciiArt}>
@@ -12,7 +11,7 @@ const Welcome: React.FC = () => {
 /_/  /_/\\___/_/\\__,_/\\____/_/  /_/   `}
       </div>
       <div>Welcome to Meidori Portfolio v1.0.0 (LTS 2026)</div>
-      <div>* Support: https://github.com/meidori/portfolio</div>
+      <div>* Support: https://github.com/meidorislav/mdr</div>
       <div>* Documentation: man meidori</div>
       <div>Last login: Thu May 28 2026 from 127.0.0.1</div>
     </section>

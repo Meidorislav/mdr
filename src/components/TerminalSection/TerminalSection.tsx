@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './TerminalSection.module.css';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
 
@@ -11,9 +11,10 @@ interface TerminalSectionProps {
   isPromptOnly?: boolean;
   animateCommand?: boolean;
   isVisible?: boolean; 
+  onFinished?: () => void;
 }
 
-const TerminalSection: React.FC<TerminalSectionProps> = ({ 
+const TerminalSection = ({ 
   command = "", 
   children, 
   user = "user", 
@@ -21,9 +22,27 @@ const TerminalSection: React.FC<TerminalSectionProps> = ({
   path = "~",
   isPromptOnly = false,
   animateCommand = true,
-  isVisible = true
-}) => {
-  const { displayedText, isFinished } = useTypingEffect(command, 50, isVisible && animateCommand);
+  isVisible = true,
+  onFinished
+}: TerminalSectionProps) => {
+  const shouldAnimate = isVisible && animateCommand && !isPromptOnly && command.length > 0;
+  const { displayedText, isFinished } = useTypingEffect(command, 50, shouldAnimate);
+
+  useEffect(() => {
+    // If we shouldn't animate (prompt only or animation disabled), 
+    // trigger onFinished immediately when visible
+    if (isVisible && !shouldAnimate && onFinished) {
+      onFinished();
+    }
+  }, [isVisible, shouldAnimate, onFinished]);
+
+  useEffect(() => {
+    if (isFinished && onFinished) {
+      onFinished();
+    }
+  }, [isFinished, onFinished]);
+
+  if (!isVisible) return null;
 
   // For prompt-only, we always show the cursor.
   // For commands, we only show cursor while typing.
@@ -51,5 +70,8 @@ const TerminalSection: React.FC<TerminalSectionProps> = ({
     </>
   );
 };
+
+TerminalSection.displayName = 'TerminalSection';
+TerminalSection.isTerminalSection = true;
 
 export default TerminalSection;

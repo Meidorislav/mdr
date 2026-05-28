@@ -1,23 +1,63 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from './TerminalWindow.module.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 interface TerminalWindowProps {
-  children: React.ReactNode; // Standard ReactNode to allow passing clones with props
+  children: React.ReactNode;
   title?: string;
 }
 
-const TerminalWindow: React.FC<TerminalWindowProps> = ({ children, title = "user@portfolio:~" }) => {
+const TerminalWindow = ({ children, title = "user@portfolio:~" }: TerminalWindowProps) => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [maxReachedStep, setMaxReachedStep] = useState(-1);
   const windowRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(windowRef, { 
+  const isWindowVisible = useIntersectionObserver(windowRef, { 
     threshold: 0.3,
   });
 
-  // Inject isVisible prop to children if they are TerminalSection components
-  const childrenWithProps = React.Children.map(children, child => {
+  const childrenArray = React.Children.toArray(children);
+
+  // Update maxReachedStep only when window is visible
+  useEffect(() => {
+    if (isWindowVisible) {
+      setMaxReachedStep(prev => Math.max(prev, activeStep));
+    }
+  }, [isWindowVisible, activeStep]);
+
+  useEffect(() => {
+    // Only advance the sequence if the window is visible
+    if (isWindowVisible && activeStep < childrenArray.length) {
+      const currentChild = childrenArray[activeStep];
+      if (React.isValidElement(currentChild)) {
+        const componentType = currentChild.type as any;
+        if (componentType.isTerminalSection !== true) {
+          // If not a TerminalSection, move to next step immediately
+          setActiveStep(prev => prev + 1);
+        }
+      } else {
+        // Not a valid element, skip
+        setActiveStep(prev => prev + 1);
+      }
+    }
+  }, [activeStep, childrenArray.length, isWindowVisible]);
+
+  // Inject props to children for sequencing
+  const childrenWithProps = childrenArray.map((child, index) => {
     if (React.isValidElement(child)) {
-      // @ts-ignore - we want to inject isVisible even if not explicitly in props
-      return React.cloneElement(child, { isVisible });
+      // Child is visible if it was already reached, and it stays visible
+      const isVisible = index <= maxReachedStep;
+      
+      return React.cloneElement(child, { 
+        // @ts-ignore
+        isVisible,
+        onFinished: () => {
+          // Advance activeStep even if not visible, 
+          // but maxReachedStep will only follow when window becomes visible
+          if (index === activeStep) {
+            setActiveStep(prev => prev + 1);
+          }
+        }
+      });
     }
     return child;
   });
@@ -25,7 +65,7 @@ const TerminalWindow: React.FC<TerminalWindowProps> = ({ children, title = "user
   return (
     <div 
       ref={windowRef}
-      className={`${styles.terminalWindow} ${isVisible ? styles.visible : ''}`}
+      className={`${styles.terminalWindow} ${isWindowVisible ? styles.visible : ''}`}
     >
       <div className={styles.terminalHeader}>
         <div className={styles.terminalInfo}>

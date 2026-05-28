@@ -86,7 +86,7 @@ const App = () => {
         </TerminalWindow>
       </div>
 
-      {/* Contact Window */}
+      {/* Skills Window */}
       <div style={sectionWrapperStyle}>
         <TerminalWindow title={`${user}@${host}: ~/skills`}>
           <TerminalSection command="ls -F skills/" path="~/skills" user={user} host={host}>

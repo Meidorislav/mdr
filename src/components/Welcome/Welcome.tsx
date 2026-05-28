@@ -11,6 +11,7 @@ const Welcome = () => {
 /_/  /_/\\___/_/\\__,_/\\____/_/  /_/   `}
       </div>
       <div>Welcome to Meidori Portfolio v1.0.0 (LTS 2026)</div>
+      <div>User: Vladislav Bakin</div>
       <div>* Support: https://github.com/meidorislav/mdr</div>
       <div>* Documentation: man meidori</div>
       <div>Last login: Thu May 28 2026 from 127.0.0.1</div>

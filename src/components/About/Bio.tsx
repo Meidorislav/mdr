@@ -7,6 +7,7 @@ const Bio = () => {
       <p style={{ lineHeight: '1.6' }}>
         I'm a <span style={{ color: 'var(--accent-color)' }}>3rd-year student at PNRPU</span>, majoring in Informatics and Computer Science. 
         Deeply passionate about <span style={{ color: 'var(--path-color)' }}>Go Backend Development</span> and a dedicated <span style={{ color: 'var(--keyword-color)' }}>Arch Linux</span> user (main OS). 
+        Currently actively looking for an <span style={{ color: 'var(--accent-color)' }}>Internship as Go Backend Developer</span>.
         I focus on high-performance systems and clean architecture, with a goal to build robust infrastructures within the <span style={{ color: 'var(--user-color)' }}>Fintech</span> industry. 
         Active hackathon participant, team leader, and advocate for open-source software.
       </p>

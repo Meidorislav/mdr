@@ -9,6 +9,7 @@ const Contact = () => {
       <div><span style={{ color: 'var(--accent-color)' }}>Telegram:</span> @meidorislav</div>
       <div><span style={{ color: 'var(--accent-color)' }}>GitHub:</span> https://github.com/Meidorislav</div>
       <div><span style={{ color: 'var(--accent-color)' }}>LinkedIn:</span> https://linkedin.com/in/meidorislav</div>
+      <div><span style={{ color: 'var(--accent-color)' }}>Location:</span> Perm, Russia</div>
     </>
   );
 };

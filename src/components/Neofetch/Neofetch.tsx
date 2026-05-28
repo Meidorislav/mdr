@@ -31,6 +31,7 @@ const Neofetch = () => {
       <div>
         <div className={styles.infoTitle} style={{ color: 'var(--user-color)' }}>meidorislav<span style={{ color: 'var(--text-color)' }}>@</span>portfolio</div>
         <div className={styles.divider} style={{ color: 'var(--date-color)' }}>--------------</div>
+        <div><span className={styles.infoLabel} style={{ color: 'var(--keyword-color)' }}>Name</span>: Vladislav Bakin</div>
         <div><span className={styles.infoLabel} style={{ color: 'var(--keyword-color)' }}>OS</span>: Arch Linux x86_64</div>
         <div><span className={styles.infoLabel} style={{ color: 'var(--keyword-color)' }}>Host</span>: Custom Portfolio PC</div>
         <div><span className={styles.infoLabel} style={{ color: 'var(--keyword-color)' }}>Kernel</span>: 6.8.9-arch1-1</div>

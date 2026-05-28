@@ -2,6 +2,7 @@
   "name": "mdr",
   "private": true,
   "version": "0.0.0",
+  "author": "Vladislav Bakin <meidorislav@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",

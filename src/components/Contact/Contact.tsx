@@ -1,6 +1,9 @@
-import styles from './Contact.module.css';
+import { useTranslation } from 'react-i18next';
+import styles from "./Contact.module.css";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div>Initializing secure connection...</div>
@@ -10,23 +13,50 @@ const Contact = () => {
       <br />
 
       <div>
-        <span className={styles.label}>Email:</span> meidorislav@gmail.com
+        <span className={styles.label}>Email:</span>{" "}
+        <a className={styles.link} href="mailto:meidorislav@gmail.com">
+          meidorislav@gmail.com
+        </a>
       </div>
 
       <div>
-        <span className={styles.label}>Telegram:</span> @meidorislav
+        <span className={styles.label}>Telegram:</span>{" "}
+        <a
+          className={styles.link}
+          href="https://t.me/meidorislav"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @meidorislav
+        </a>
       </div>
 
       <div>
-        <span className={styles.label}>GitHub:</span> https://github.com/Meidorislav
+        <span className={styles.label}>GitHub:</span>{" "}
+        <a
+          className={styles.link}
+          href="https://github.com/Meidorislav"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/Meidorislav
+        </a>
       </div>
 
       <div>
-        <span className={styles.label}>LinkedIn:</span> https://linkedin.com/in/meidorislav
+        <span className={styles.label}>LinkedIn:</span>{" "}
+        <a
+          className={styles.link}
+          href="https://linkedin.com/in/meidorislav"
+          target="_blank"
+          rel="noreferrer"
+        >
+          linkedin.com/in/meidorislav
+        </a>
       </div>
 
       <div>
-        <span className={styles.label}>Location:</span> Perm, Russia
+        <span className={styles.label}>{t('contacts.location')}</span> Perm, Russia
       </div>
     </>
   );

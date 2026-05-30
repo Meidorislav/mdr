@@ -2,6 +2,38 @@
   color: var(--accent-color);
 }
 
+.link {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(80, 250, 123, 0.4);
+  transition: 0.15s ease;
+  word-break: break-word;
+}
+
+/* убрать стандартные цвета браузера */
+.link:link,
+.link:visited {
+  color: var(--accent-color);
+}
+
+/* hover */
+.link:hover {
+  border-bottom-color: var(--accent-color);
+  opacity: 0.85;
+}
+
+/* focus (важно, но можно сделать аккуратно) */
+.link:focus {
+  outline: none;
+}
+
+/* нормальный доступный focus вместо outline */
+.link:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 2px;
+  border-bottom-color: transparent;
+}
+
 @media (max-width: 600px) {
   .label {
     display: inline-block;

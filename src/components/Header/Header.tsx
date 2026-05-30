@@ -1,15 +1,22 @@
+import { useTranslation } from 'react-i18next';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
+
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Bio', href: '#bio' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Education', href: '#education' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: t('header.home'), href: '#home' },
+    { label: t('header.bio'), href: '#bio' },
+    { label: t('header.experience'), href: '#experience' },
+    { label: t('header.projects'), href: '#projects' },
+    { label: t('header.education'), href: '#education' },
+    { label: t('header.skills'), href: '#skills' },
+    { label: t('header.contact'), href: '#contact' },
   ];
+
+  const toggleLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className={styles.header}>
@@ -28,6 +35,21 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      <div className={styles.langSwitcher}>
+        <button 
+          onClick={() => toggleLanguage('en')} 
+          className={`${styles.langBtn} ${i18n.language === 'en' ? styles.active : ''}`}
+        >
+          EN
+        </button>
+        <span className={styles.separator}>|</span>
+        <button 
+          onClick={() => toggleLanguage('ru')} 
+          className={`${styles.langBtn} ${i18n.language === 'ru' ? styles.active : ''}`}
+        >
+          RU
+        </button>
+      </div>
     </header>
   );
 };

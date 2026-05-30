@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Skills.module.css';
 
 interface Category {
@@ -29,7 +30,7 @@ const categories: Category[] = [
   },
   {
     title: 'SPECIAL / DOCS',
-    skills: ['Types', 'Markdown', 'LaTeX']
+    skills: ['Typst', 'Markdown', 'LaTeX']
   },
   {
     title: 'LANGUAGES (BIO)',
@@ -38,6 +39,8 @@ const categories: Category[] = [
 ];
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   const [activeIdx, setActiveIdx] = useState(0);
 
   const nextCategory = () => setActiveIdx((prev) => (prev + 1) % categories.length);
@@ -63,7 +66,7 @@ const Skills = () => {
       </div>
       
       <div style={{ marginTop: '20px', fontSize: '0.8rem', opacity: 0.6 }}>
-        Use controls to view different categories
+        {t('skills.tip')}
       </div>
     </div>
   );

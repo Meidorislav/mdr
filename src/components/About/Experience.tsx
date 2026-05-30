@@ -1,32 +1,36 @@
+import { useTranslation, Trans } from 'react-i18next';
 import styles from './About.module.css';
 
 const Experience = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <span className={styles.heading}># EXPERIENCE</span>
+        <span className={styles.heading}>{t('experience.title')}</span>
       </div>
 
       <div className={styles.section}>
         <div className={styles.company}>
-          LLC "Information Service Center"
+          {t('experience.company')}
         </div>
 
         <div className={styles.position}>
-          SQL Developer
+          {t('experience.position')}
         </div>
 
         <div className={styles.date}>
-          May 2026 - July 2026
+          {t('experience.date')}
         </div>
 
         <p className={styles.description}>
-          Specialized in{' '}
-          <span className={styles.accent}>database optimization</span>,
-          complex SQL queries, and efficient data management.
-          Mastered{' '}
-          <span className={styles.path}>PostgreSQL</span>
-          {' '}and relational architecture design.
+          <Trans 
+            i18nKey="experience.description"
+            components={{
+              accent: <span className={styles.accent} />,
+              path: <span className={styles.path} />
+            }}
+          />
         </p>
       </div>
     </div>

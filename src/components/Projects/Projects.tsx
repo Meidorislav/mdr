@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import styles from './Projects.module.css';
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={styles.title}>[ PROJECT_LOG ]</div>
@@ -16,7 +19,7 @@ const Projects = () => {
         </div>
 
         <div className={styles.description}>
-          Cat-themed loot case marketplace. Xsolla payments integration.
+          {t('projects.purr-case')}
         </div>
 
         <div className={styles.role}>
@@ -27,8 +30,8 @@ const Projects = () => {
         </div>
 
         <div className={styles.stackBox}>
-          <span className={styles.label}>Stack:</span> Go (Chi), PostgreSQL,
-          migrations, React, Redux Toolkit, Docker, Nginx
+          <span className={styles.label}>Stack:
+            </span> Go, TypeScript, React, Vite, PostgreSQL, Redux Toolkit, Docker, Nginx
         </div>
       </div>
 
@@ -36,14 +39,14 @@ const Projects = () => {
         <div>
           <span className={styles.command}>$ project </span>
           <span className={styles.label}>--name=</span>
-          <span className={styles.projectName}>"Storefront_Sales"</span>
+          <span className={styles.projectName}>"Storefront&Sales"</span>
           <span className={styles.achievement}>
             ⚡ Second Xsolla Hackathon
           </span>
         </div>
 
         <div className={styles.description}>
-          E-commerce solution with dynamic pricing and product recommendations.
+          {t('projects.storefront-sales')}
         </div>
 
         <div className={styles.role}>
@@ -54,8 +57,8 @@ const Projects = () => {
         </div>
 
         <div className={styles.stackBox}>
-          <span className={styles.label}>Stack:</span> Go, TS, React,
-          PostgreSQL, Redis, ML (Python Rec Sys)
+          <span className={styles.label}>Stack:
+            </span> Go, TypeScript, React, Vite, PostgreSQL, TypeSense, Redis, ML (Python Rec Sys), Docker, Nginx
         </div>
       </div>
 
@@ -67,13 +70,12 @@ const Projects = () => {
         </div>
 
         <div className={styles.description}>
-          Real-time multiplayer party game with WebSockets. Cozy vibes &
-          interactive rounds.
+          {t('projects.who-among-you')}
         </div>
 
         <div className={styles.stackBox}>
-          <span className={styles.label}>Stack:</span> Go (Chi, WebSockets), TS,
-          React 19, i18next, PostgreSQL, Docker, Caddy
+          <span className={styles.label}>Stack:
+            </span> Go, TypeScript, React, Vite, i18next, PostgreSQL, Docker, Caddy
         </div>
       </div>
 
@@ -85,12 +87,12 @@ const Projects = () => {
         </div>
 
         <div className={styles.description}>
-          Linux-inspired terminal portfolio with sequenced animations.
+          {t('projects.mdr-portfolio')}
         </div>
 
         <div className={styles.stackBox}>
-          <span className={styles.label}>Stack:</span> React, TypeScript, Vite,
-          CSS Modules
+          <span className={styles.label}>Stack:
+            </span> TypeScript, React, Vite, CSS Modules, i18next
         </div>
       </div>
     </>

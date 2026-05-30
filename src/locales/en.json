@@ -1,0 +1,53 @@
+{
+  "header": {
+    "home": "Home",
+    "bio": "Bio",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "welcome": {
+    "title": "Welcome to Meidori Portfolio v1.0.0 (LTS 2026)",
+    "user": "User: Vladislav Bakin",
+    "support": "Support",
+    "documentation": "Documentation",
+    "last_login": "Last login"
+  },
+  "bio": {
+    "title": "# ABOUT ME",
+    "text": "I'm a <accent>3rd-year student at PNRPU</accent>, majoring in Informatics and Computer Science.\nDeeply passionate about <path>Go Backend Development</path> and a dedicated <keyword>Arch Linux</keyword> user (main OS).\nCurrently actively looking for an <accent>Internship as Go Backend Developer</accent>.\nI focus on high-performance systems and clean architecture, with a goal to build robust infrastructures within the <user>Fintech</user> industry.\nHackathon participant, team leader, and advocate for open-source software."
+  },
+  "experience": {
+    "title": "# EXPERIENCE",
+    "company": "LLC \"Information Service Center\"",
+    "position": "SQL Developer",
+    "date": "May 2026 - July 2026",
+    "description": "Specialized in <accent>database optimization</accent>, complex SQL queries, and efficient data management. Worked with <path>PostgreSQL</path> and relational database design."
+  },
+  "projects": {
+    "purr-case": "Cat-themed loot case marketplace. Xsolla payments integration.",
+    "storefront-sales": "E-commerce solution with dynamic pricing and product recommendations.",
+    "who-among-you": "Real-time multiplayer party game with WebSockets. Cozy vibes & interactive rounds.",
+    "mdr-portfolio": "Linux-inspired terminal portfolio with sequenced animations."  
+  },
+  "education": {
+    "title": "# ACADEMIC_PATH",
+    "pnrpu-title": "Perm National Research Polytechnic University (PNRPU)",
+    "pnrpu-majoring": "B.S. in Informatics and Computer Science",
+    "pnrpu-period": "September 2023 - June 2027 (Expected)",
+    "prr-title": "Professional Retraining Program in Data Mining and Machine Learning (PNRPU)",
+    "prr-majoring": "Qualification: Data Mining and Machine Learning Implementation Specialist",
+    "prr-period": "October 2024 - June 2025",
+    "xsolla-school-title": "Xsolla School",
+    "xsolla-school-majoring": "Software Engineering",
+    "xsolla-school-period": "February 2026 - May 2026"
+  },
+  "skills": {
+    "tip": "Use controls to view different categories"
+  },
+  "contacts": {
+    "location": "Location:"
+  }
+}

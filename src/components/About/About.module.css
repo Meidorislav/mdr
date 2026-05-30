@@ -1,0 +1,61 @@
+.container {
+  color: var(--text-color);
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.heading {
+  color: var(--keyword-color);
+  font-weight: bold;
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.path {
+  color: var(--path-color);
+}
+
+.keyword {
+  color: var(--keyword-color);
+}
+
+.user {
+  color: var(--user-color);
+}
+
+.date {
+  color: var(--date-color);
+  font-size: 0.85rem;
+}
+
+.position {
+  color: var(--path-color);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.company {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-top: 5px;
+  padding-left: 15px;
+  border-left: 2px solid var(--keyword-color);
+  line-height: 1.6;
+}
+
+.bioText {
+  line-height: 1.6;
+  word-break: normal;
+  overflow-wrap: break-word;
+}

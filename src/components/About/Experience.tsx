@@ -1,17 +1,32 @@
+import styles from './About.module.css';
+
 const Experience = () => {
   return (
-    <div style={{ color: 'var(--text-color)' }}>
-      <div style={{ marginBottom: '15px' }}>
-        <span style={{ color: 'var(--keyword-color)', fontWeight: 'bold' }}># EXPERIENCE</span>
+    <div className={styles.container}>
+      <div className={styles.title}>
+        <span className={styles.heading}># EXPERIENCE</span>
       </div>
-      
-      <div style={{ marginBottom: '20px' }}>
-        <div style={{ color: 'var(--accent-color)', fontWeight: 'bold' }}>LLC "Information Service Center"</div>
-        <div style={{ color: 'var(--path-color)', fontSize: '0.9rem', fontWeight: 'bold' }}>SQL Developer</div>
-        <div style={{ color: 'var(--date-color)', fontSize: '0.85rem' }}>May 2026 - July 2026</div>
-        <p style={{ marginTop: '5px', paddingLeft: '15px', borderLeft: '2px solid var(--keyword-color)' }}>
-          Specialized in <span style={{ color: 'var(--accent-color)' }}>database optimization</span>, complex SQL queries, and efficient data management. 
-          Mastered <span style={{ color: 'var(--path-color)' }}>PostgreSQL</span> and relational architecture design.
+
+      <div className={styles.section}>
+        <div className={styles.company}>
+          LLC "Information Service Center"
+        </div>
+
+        <div className={styles.position}>
+          SQL Developer
+        </div>
+
+        <div className={styles.date}>
+          May 2026 - July 2026
+        </div>
+
+        <p className={styles.description}>
+          Specialized in{' '}
+          <span className={styles.accent}>database optimization</span>,
+          complex SQL queries, and efficient data management.
+          Mastered{' '}
+          <span className={styles.path}>PostgreSQL</span>
+          {' '}and relational architecture design.
         </p>
       </div>
     </div>

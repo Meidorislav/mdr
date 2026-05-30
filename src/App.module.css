@@ -21,6 +21,11 @@
   padding: 20px;
   box-sizing: border-box;
   flex-shrink: 0;
+  scroll-margin-top: var(--header-height);
+}
+
+.sectionWrapper:first-of-type {
+  padding-top: calc(var(--header-height) + 20px);
 }
 
 @media (max-width: 600px) {
@@ -33,5 +38,10 @@
   .sectionWrapper {
     min-height: auto;
     padding: 14px 10px 28px;
+    scroll-margin-top: 0;
+  }
+
+  .sectionWrapper:first-of-type {
+    padding-top: calc(var(--header-height) + 14px);
   }
 }

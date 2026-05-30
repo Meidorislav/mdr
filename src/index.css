@@ -10,6 +10,8 @@
   --string-color: #f1fa8c;
   --error-color: #ff5555;
   --user-color: #bd93f9;
+  --border-color: #333333;
+  --text-dim: #666666;
   --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
   --header-height: 60px;
 }

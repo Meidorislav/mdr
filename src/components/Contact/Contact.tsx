@@ -56,7 +56,7 @@ const Contact = () => {
       </div>
 
       <div>
-        <span className={styles.label}>{t('contacts.location')}</span> Perm, Russia
+        <span className={styles.label}>{t('contacts.location')}</span> {t('contacts.perm')}
       </div>
     </>
   );

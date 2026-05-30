@@ -48,6 +48,10 @@
     "tip": "Use controls to view different categories"
   },
   "contacts": {
-    "location": "Location:"
+    "location": "Location:",
+    "perm": "Perm, Russia"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }

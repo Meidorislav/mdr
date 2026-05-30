@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import TerminalWindow from './components/TerminalWindow/TerminalWindow';
 import TerminalSection from './components/TerminalSection/TerminalSection';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import styles from './App.module.css';
 import { portfolioWindows } from './data/portfolioWindows';
 
@@ -50,6 +51,7 @@ const App = () => {
           </TerminalWindow>
         </div>
       ))}
+      <Footer />
     </div>
   );
 };

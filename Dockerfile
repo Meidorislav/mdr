@@ -1,10 +1,11 @@
 # Build stage
 FROM node:20-alpine AS build
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
+RUN corepack enable pnpm
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 # Production stage
 FROM caddy:2-alpine

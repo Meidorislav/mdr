@@ -66,7 +66,7 @@ export const portfolioWindows: WindowConfig[] = [
     blocks: [
       {
         kind: 'terminal',
-        command: 'bat experience.md',
+        command: 'cat experience.md',
         element: <Experience />,
         path: '~/experience',
       },
@@ -82,7 +82,7 @@ export const portfolioWindows: WindowConfig[] = [
     blocks: [
       {
         kind: 'terminal',
-        command: 'bat projects/portfolio.md',
+        command: 'cat projects/portfolio.md',
         element: <Projects />,
         path: '~/projects',
       },

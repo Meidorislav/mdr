@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <span className={styles.prompt}>$</span>
+        <span className={styles.prompt}>mdr$</span>
         <span className={styles.cursor}>_</span>
       </div>
       <nav className={styles.nav}>

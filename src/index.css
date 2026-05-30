@@ -11,6 +11,7 @@
   --error-color: #ff5555;
   --user-color: #bd93f9;
   --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+  --header-height: 60px;
 }
 
 * {

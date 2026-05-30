@@ -6,7 +6,7 @@
   background-color: var(--bg-color);
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
-  scroll-padding-top: 60px;
+  scroll-padding-top: var(--header-height);
 }
 
 .sectionWrapper {
@@ -26,6 +26,8 @@
 @media (max-width: 600px) {
   .page {
     scroll-snap-type: none;
+    --header-height: 50px;
+    scroll-padding-top: var(--header-height);
   }
 
   .sectionWrapper {

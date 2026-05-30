@@ -13,17 +13,17 @@
 }
 
 .asciiArt {
-  font-size: 0.6rem;
+  font-size: clamp(0.4rem, 2vw, 0.6rem);
   line-height: 1;
   color: var(--text-color);
   margin-bottom: 10px;
   white-space: pre;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
   .asciiArt {
     font-size: clamp(0.36rem, 1.8vw, 0.55rem);
-    overflow-x: auto;
   }
 }
 

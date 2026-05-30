@@ -1,11 +1,11 @@
 .asciiArt {
-  font-size: 0.6rem;
+  font-size: clamp(0.4rem, 2vw, 0.6rem);
   line-height: 1;
   color: var(--accent-color);
   margin-bottom: 10px;
   white-space: pre;
   max-width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {

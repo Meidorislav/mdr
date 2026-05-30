@@ -39,14 +39,14 @@ const Header = () => {
       <div className={styles.langSwitcher}>
         <button 
           onClick={() => toggleLanguage('en')} 
-          className={`${styles.langBtn} ${i18n.language === 'en' ? styles.active : ''}`}
+          className={`${styles.langBtn} ${(i18n.resolvedLanguage || i18n.language)?.startsWith('en') ? styles.active : ''}`}
         >
           EN
         </button>
         <span className={styles.separator}>|</span>
         <button 
           onClick={() => toggleLanguage('ru')} 
-          className={`${styles.langBtn} ${i18n.language === 'ru' ? styles.active : ''}`}
+          className={`${styles.langBtn} ${(i18n.resolvedLanguage || i18n.language)?.startsWith('ru') ? styles.active : ''}`}
         >
           RU
         </button>

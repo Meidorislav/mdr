@@ -1,0 +1,53 @@
+.title {
+  color: var(--keyword-color);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.project {
+  margin-bottom: 20px;
+  border-left: 2px solid var(--date-color);
+  padding-left: 15px;
+}
+
+.projectPortfolio {
+  border-left-color: var(--user-color);
+}
+
+.command {
+  color: var(--prompt-color);
+}
+
+.label {
+  color: var(--keyword-color);
+  font-weight: bold;
+}
+
+.projectName {
+  color: var(--string-color);
+}
+
+.achievement {
+  margin-left: 10px;
+  color: var(--path-color);
+}
+
+.description {
+  margin: 5px 0;
+}
+
+.role {
+  font-size: 0.9rem;
+}
+
+.roleValue {
+  color: var(--accent-color);
+}
+
+.stackBox {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}

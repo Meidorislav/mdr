@@ -1,0 +1,26 @@
+.page {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  background-color: var(--bg-color);
+}
+
+.sectionWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .sectionWrapper {
+    padding: 12px;
+  }
+}

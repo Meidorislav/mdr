@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export const useTypingEffect = (
   text: string,
-  speed = 30,
-  startTrigger = true
+  speed = 30
 ) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isFinished, setIsFinished] = useState(false);
@@ -11,23 +10,14 @@ export const useTypingEffect = (
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (!startTrigger) {
-      setDisplayedText('');
-      setIsFinished(false);
-
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-
-      return;
-    }
-
     let i = 0;
-
-    setDisplayedText('');
-    setIsFinished(false);
+    let cancelled = false;
 
     const type = () => {
+      if (cancelled) {
+        return;
+      }
+
       setDisplayedText(text.slice(0, i + 1));
       i++;
 
@@ -41,11 +31,13 @@ export const useTypingEffect = (
     timeoutRef.current = setTimeout(type, speed);
 
     return () => {
+      cancelled = true;
+
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [text, speed, startTrigger]);
+  }, [text, speed]);
 
   return { displayedText, isFinished };
 };

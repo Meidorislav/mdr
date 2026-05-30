@@ -12,6 +12,7 @@ const Header = () => {
     { label: t('header.education'), href: '#education' },
     { label: t('header.skills'), href: '#skills' },
     { label: t('header.contact'), href: '#contact' },
+    { label: t('header.cv'), href: '#cv' },
   ];
 
   const toggleLanguage = (lng: string) => {

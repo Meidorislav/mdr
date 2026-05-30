@@ -10,7 +10,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer id="cv" className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.socials}>
           <a 
@@ -46,6 +46,24 @@ const Footer = () => {
             title="Email"
           >
             <img src={gmailIcon} alt="Gmail" className={styles.icon} />
+          </a>
+        </div>
+        <div className={styles.cvButtons}>
+          <a 
+            href="/cv_en.pdf" 
+            target="_blank" 
+            rel="noreferrer" 
+            className={styles.cvBtn}
+          >
+            {t('footer.cv_en')}
+          </a>
+          <a 
+            href="/cv_ru.pdf" 
+            target="_blank" 
+            rel="noreferrer" 
+            className={styles.cvBtn}
+          >
+            {t('footer.cv_ru')}
           </a>
         </div>
         <div className={styles.copyright}>

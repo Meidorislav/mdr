@@ -6,7 +6,8 @@
     "projects": "Проекты",
     "education": "Образование",
     "skills": "Навыки",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "cv": "CV"
   },
   "welcome": {
     "title": "Добро пожаловать в Meidori Portfolio v1.0.0 (LTS 2026)",
@@ -52,6 +53,8 @@
     "perm": "Пермь, Россия"
   },
   "footer": {
-    "rights": "Все права защищены."
+    "rights": "Все права защищены.",
+    "cv_en": "Скачать CV (EN)",
+    "cv_ru": "Скачать CV (RU)"
   }
 }

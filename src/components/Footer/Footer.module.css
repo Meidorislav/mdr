@@ -40,6 +40,28 @@
   filter: brightness(0) invert(1); /* Assuming white icons on dark theme, adjust if needed */
 }
 
+.cvButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.cvBtn {
+  padding: 8px 16px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.cvBtn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
 .copyright {
   color: var(--text-dim);
   font-size: 0.9rem;

@@ -4,10 +4,12 @@
   color: var(--accent-color);
   margin-bottom: 10px;
   white-space: pre;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 @media (max-width: 600px) {
   .asciiArt {
-    font-size: 1.8vw;
+    font-size: clamp(0.34rem, 1.8vw, 0.52rem);
   }
 }

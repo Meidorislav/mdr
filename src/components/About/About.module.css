@@ -59,3 +59,14 @@
   word-break: normal;
   overflow-wrap: break-word;
 }
+
+@media (max-width: 600px) {
+  .description {
+    padding-left: 12px;
+    line-height: 1.5;
+  }
+
+  .bioText {
+    line-height: 1.5;
+  }
+}

@@ -114,14 +114,49 @@
 
 @media (max-width: 600px) {
   .terminalWindow {
-    border: none;
-    border-radius: 0;
     max-width: 100%;
-    box-shadow: none;
+    border-radius: 18px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    transform: translateY(24px) scale(0.985);
+  }
+
+  .terminalWindow {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .terminalHeader {
+    padding: 10px 12px;
+  }
+
+  .terminalInfo {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .terminalTitle {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .terminalControls {
+    gap: 6px;
+  }
+
+  .control {
+    width: 24px;
+    height: 22px;
   }
 
   .terminalBody {
-    padding: 10px;
+    padding: 14px 12px 16px;
+    animation: none;
+  }
+
+  .terminalBody::before {
+    opacity: 0.22;
+    background-size: 100% 4px, 4px 100%;
   }
 
   .terminalControls .control:not(.close) {

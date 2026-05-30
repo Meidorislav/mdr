@@ -2,12 +2,13 @@
   display: flex;
   gap: 20px;
   margin-top: 10px;
+  align-items: flex-start;
 }
 
 @media (max-width: 600px) {
   .neofetchContainer {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 }
 
@@ -21,7 +22,8 @@
 
 @media (max-width: 600px) {
   .asciiArt {
-    font-size: 3vw;
+    font-size: clamp(0.36rem, 1.8vw, 0.55rem);
+    overflow-x: auto;
   }
 }
 

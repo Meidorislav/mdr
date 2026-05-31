@@ -29,7 +29,10 @@ const Header = () => {
         <ul className={styles.navList}>
           {navItems.map((item) => (
             <li key={item.href} className={styles.navItem}>
-              <a href={item.href} className={styles.navLink}>
+              <a 
+                href={item.href} 
+                className={`${styles.navLink} ${item.href === '#cv' ? styles.cvLink : ''}`}
+              >
                 {item.label}
               </a>
             </li>

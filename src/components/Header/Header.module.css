@@ -76,6 +76,24 @@
   width: 100%;
 }
 
+.cvLink {
+  border: 1px solid var(--accent-color);
+  padding: 4px 12px;
+  margin-left: 4px;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.cvLink:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 12px var(--accent-color);
+}
+
+.cvLink::after {
+  display: none;
+}
+
 @media (max-width: 850px) {
   .header {
     padding: 0 20px;

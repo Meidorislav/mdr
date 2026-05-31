@@ -46,20 +46,25 @@
 }
 
 .cvBtn {
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: 1px solid var(--accent-color);
-  color: var(--accent-color);
+  color: var(--bg-color);
+  background-color: var(--accent-color);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  transition: all 0.2s ease;
-  background: transparent;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 15px rgba(85, 255, 85, 0.2);
+  display: inline-block;
+  text-align: center;
 }
 
 .cvBtn:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 10px var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+  box-shadow: 0 0 25px var(--accent-color);
+  transform: translateY(-3px);
 }
 
 .copyright {

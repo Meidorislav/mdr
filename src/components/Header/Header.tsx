@@ -19,6 +19,31 @@ const Header = () => {
     i18n.changeLanguage(lng);
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const id = href.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+        const elementRect = element.getBoundingClientRect();
+        const scrollContainer = document.querySelector('[class*="page"]') as HTMLElement;
+
+        if (scrollContainer) {
+          const viewportHeight = scrollContainer.clientHeight;
+          const elementHeight = element.offsetHeight;
+          const targetScroll = scrollContainer.scrollTop + elementRect.top - (viewportHeight - elementHeight) / 2;
+
+          scrollContainer.scrollTo({
+            top: targetScroll,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -29,8 +54,9 @@ const Header = () => {
         <ul className={styles.navList}>
           {navItems.map((item) => (
             <li key={item.href} className={styles.navItem}>
-              <a 
-                href={item.href} 
+              <a
+                href={item.href}
+                onClick={handleNavClick}
                 className={`${styles.navLink} ${item.href === '#cv' ? styles.cvLink : ''}`}
               >
                 {item.label}
@@ -40,15 +66,15 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.langSwitcher}>
-        <button 
-          onClick={() => toggleLanguage('en')} 
+        <button
+          onClick={() => toggleLanguage('en')}
           className={`${styles.langBtn} ${(i18n.resolvedLanguage || i18n.language)?.startsWith('en') ? styles.active : ''}`}
         >
           EN
         </button>
         <span className={styles.separator}>|</span>
-        <button 
-          onClick={() => toggleLanguage('ru')} 
+        <button
+          onClick={() => toggleLanguage('ru')}
           className={`${styles.langBtn} ${(i18n.resolvedLanguage || i18n.language)?.startsWith('ru') ? styles.active : ''}`}
         >
           RU

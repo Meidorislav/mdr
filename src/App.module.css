@@ -2,10 +2,9 @@
   height: 100dvh;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   background-color: var(--bg-color);
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
   scroll-padding-top: var(--header-height);
 }
 
@@ -17,7 +16,6 @@
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
   padding: 20px;
   box-sizing: border-box;
   flex-shrink: 0;

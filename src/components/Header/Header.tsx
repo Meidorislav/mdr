@@ -26,7 +26,6 @@ const Header = () => {
       const id = href.substring(1);
       const element = document.getElementById(id);
       if (element) {
-        const headerHeight = document.querySelector('header')?.offsetHeight || 0;
         const elementRect = element.getBoundingClientRect();
         const scrollContainer = document.querySelector('[class*="page"]') as HTMLElement;
 

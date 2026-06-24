@@ -25,7 +25,7 @@
     "company": "LLC \"Information Service Center\"",
     "position": "SQL Developer",
     "date": "May 2026 - July 2026",
-    "description": "Specialized in <accent>database optimization</accent>, complex SQL queries, and efficient data management. Worked with <path>PostgreSQL</path> and relational database design."
+    "description": "Specialized in <accent>database optimization</accent>, complex SQL queries, and efficient data management. Worked with <path>Microsoft SQL Server</path> and relational database design."
   },
   "projects": {
     "purr-case": "Cat-themed loot case marketplace. Xsolla payments integration.",

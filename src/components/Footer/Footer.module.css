@@ -37,7 +37,6 @@
 .icon {
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1); /* Assuming white icons on dark theme, adjust if needed */
 }
 
 .cvButtons {
@@ -55,7 +54,7 @@
   font-size: 0.9rem;
   font-weight: bold;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 15px rgba(85, 255, 85, 0.2);
+  box-shadow: 0 0 15px rgba(26, 127, 55, 0.2);
   display: inline-block;
   text-align: center;
 }

@@ -5,7 +5,7 @@
 .link {
   color: var(--accent-color);
   text-decoration: none;
-  border-bottom: 1px dashed rgba(80, 250, 123, 0.4);
+  border-bottom: 1px dashed rgba(22, 121, 77, 0.4);
   transition: 0.15s ease;
   word-break: break-word;
 }

@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   height: var(--header-height);
-  background-color: rgba(13, 13, 13, 0.85);
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(85, 255, 85, 0.2);
+  border-bottom: 1px solid rgba(26, 127, 55, 0.2);
   display: flex;
   align-items: center;
   padding: 0 40px;
@@ -212,7 +212,7 @@
 }
 
 .separator {
-  color: rgba(85, 255, 85, 0.3);
+  color: rgba(26, 127, 55, 0.3);
   pointer-events: none;
 }
 

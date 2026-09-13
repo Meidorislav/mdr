@@ -4,14 +4,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-  border: 1px solid #444;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d7d7d7;
   opacity: 0;
   transform: translateY(50px) scale(0.95);
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
               transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -22,12 +22,12 @@
 }
 
 .terminalHeader {
-  background-color: #2d2d2d;
+  background-color: #ebebeb;
   padding: 6px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #d7d7d7;
   user-select: none;
 }
 
@@ -38,14 +38,14 @@
 }
 
 .terminalIcon {
-  color: #aaa;
+  color: #666;
   font-size: 14px;
   display: flex;
   align-items: center;
 }
 
 .terminalTitle {
-  color: #ddd;
+  color: #333;
   font-size: 0.85rem;
   font-family: var(--font-mono);
 }
@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #666;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
@@ -69,8 +69,8 @@
 }
 
 .control:hover {
-  background-color: #444;
-  color: #fff;
+  background-color: #d7d7d7;
+  color: #000;
 }
 
 .close:hover {
@@ -80,7 +80,7 @@
 
 .terminalBody {
   padding: 15px;
-  background-color: rgba(13, 13, 13, 0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
   animation: flicker 0.1s infinite;
   min-height: 100px;
@@ -94,7 +94,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.03) 50%);
   z-index: 2;
   background-size: 100% 3px, 3px 100%;
   pointer-events: none;
@@ -116,12 +116,12 @@
   .terminalWindow {
     max-width: 100%;
     border-radius: 18px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
     transform: translateY(24px) scale(0.985);
   }
 
   .terminalWindow {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .terminalHeader {
